@@ -4,8 +4,6 @@ This repository contains the infrastructure-as-code (IaC) setup using **Terrafor
 
 ---
 
-
-
 ## 📁 Project Structure
 
 ```bash
@@ -30,5 +28,5 @@ terraform-eks-db/
 ```
 
 ## This is the architecture for the infrastruture deployment
+
 ![Project Architecture](architecture.png)# aws-three-tier-Deploy
-# aws-three-tier-Deploy
