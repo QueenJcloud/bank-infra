@@ -7,26 +7,24 @@ This repository contains the infrastructure-as-code (IaC) setup using **Terrafor
 ## 📁 Project Structure
 
 ```bash
-terraform-eks-db/
-├── .github/workflows/          # GitHub Actions CI/CD workflows
-├── .qodo/                      # Local automation/scripts (optional or internal tooling)
-├── docker-git-runner-setup/   # Docker setup for custom GitHub runner (if used)
-├── module-database/           # Terraform module to deploy RDS databases
-├── module-dns/                # Terraform module for Route53 or other DNS setup
-├── module-eks/                # Terraform module to deploy an EKS cluster
-├── module-vpc/                # Terraform module to provision VPC and networking
-├── .terraform.lock.hcl        # Provider and dependency lock file
-├── .tflint.hcl                # Linting configuration for Terraform
-├── 01-provider.tf             # AWS provider configuration
-├── backend.tf                 # Remote state configuration (e.g., Terraform Cloud/S3)
-├── deploy.yaml                # Sample GitHub Actions workflow (deprecated or backup)
-├── main.tf                    # Main Terraform entry point that wires all modules
-├── output.tf                  # Outputs of the infrastructure
-├── readme.MD                  # You are here
-├── terraform.tfvars           # Variable values
-└── variable.tf                # Variable definitions.
+bank-infra/
+├── .github/workflows/          # GitHub Actions CI/CD workflows for Terraform plans/applies
+├── docker-git-runner-setup/    # Optional: Docker setup for a self-hosted GitHub runner
+├── module-vpc/                 # Terraform module to provision VPC and networking
+├── module-eks/                 # Terraform module to deploy an EKS cluster
+├── module-database/            # Terraform module to deploy RDS databases
+├── module-dns/                 # Terraform module for Route53/DNS setup
+├── .terraform.lock.hcl         # Provider and dependency lock file
+├── .tflint.hcl                 # Terraform linting configuration
+├── 01-provider.tf              # AWS provider configuration
+├── backend.tf                  # Remote state configuration (e.g., S3/DynamoDB/Terraform Cloud)
+├── main.tf                     # Root module wiring the VPC, EKS, DB, and DNS modules
+├── output.tf                   # Root outputs (cluster endpoint, DB endpoint, etc.)
+├── terraform.tfvars            # Variable values for the root module
+├── variable.tf                 # Variable definitions for the root module
+└── readme.MD                   # Project documentation (you are here)
 ```
 
-## This is the architecture for the infrastruture deployment
+## 🏗️ Architecture
 
-![Project Architecture](architecture.png)# aws-three-tier-Deploy
+![Project Architecture](architecture.png)
