@@ -1,2 +1,2 @@
-# bank-infra
+# Bank Application
 Infrastructure for Bank Application
