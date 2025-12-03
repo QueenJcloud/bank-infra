@@ -6,3 +6,4 @@
 *.DS_Store
 
 .terraform/
+bank-infra/
